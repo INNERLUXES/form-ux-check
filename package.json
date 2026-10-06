@@ -1,0 +1,50 @@
+{
+  "name": "form-ux-check",
+  "version": "1.0.0",
+  "description": "Form UX check: reads the HTML files of a site as text, runs no browser, and lists form usability and accessibility problems with file, line and column as an input to a UX audit: fields with no label, placeholders used as labels, text fields that should be email, tel, url or number, missing and invalid autocomplete tokens, required fields with no indication, references to missing ids, unlinked error messages, duplicate ids, radio and check box groups with no name, buttons with no name, forms with no submit button, tabindex above 0, autocomplete off on login fields, inputmode and pattern that do not fit and very long select lists. Text, JSON, CSV and GitHub annotation output, exit codes for a pipeline, no dependencies.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "form-ux-check": "bin/form-ux-check.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "docs",
+    "examples",
+    "research",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "test:coverage": "node --test --experimental-test-coverage \"test/*.test.js\"",
+    "check": "node tools/check.mjs",
+    "example": "node tools/example.mjs"
+  },
+  "keywords": [
+    "ux",
+    "forms",
+    "accessibility",
+    "wcag",
+    "ux-audit",
+    "html",
+    "autocomplete",
+    "a11y",
+    "code-review",
+    "cli"
+  ],
+  "author": "INNERLUXES <info@innerluxes.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INNERLUXES/form-ux-check.git"
+  },
+  "homepage": "https://innerluxes.dev/application/ux-design"
+}

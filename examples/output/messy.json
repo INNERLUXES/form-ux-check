@@ -1,0 +1,1127 @@
+{
+  "tool": "form-ux-check",
+  "version": "1.0.0",
+  "input": {
+    "folder": "examples/messy",
+    "htmlFiles": 4,
+    "otherFiles": 2,
+    "foldersPassedOver": 1,
+    "excluded": 1,
+    "links": 0,
+    "include": [
+      "**/*.html",
+      "**/*.htm"
+    ],
+    "exclude": [
+      "vendor/**"
+    ]
+  },
+  "config": {
+    "file": "examples/config.json",
+    "name": "Kestrel Cycle Hire form review",
+    "include": [
+      "**/*.html",
+      "**/*.htm"
+    ],
+    "exclude": [
+      "vendor/**"
+    ],
+    "optionLimit": 30,
+    "minSeverity": "info",
+    "failOn": "error",
+    "rules": [
+      {
+        "id": "missing-label",
+        "key": "missingLabel",
+        "level": "error",
+        "rule": "a field with no label, aria-labelledby, aria-label, title or placeholder"
+      },
+      {
+        "id": "placeholder-only-label",
+        "key": "placeholderOnly",
+        "level": "warning",
+        "rule": "a field named by its placeholder alone"
+      },
+      {
+        "id": "input-type-mismatch",
+        "key": "inputType",
+        "level": "warning",
+        "rule": "a text field whose autocomplete, name or id says email, tel, url or a counted number"
+      },
+      {
+        "id": "autocomplete-invalid",
+        "key": "autocompleteInvalid",
+        "level": "error",
+        "rule": "an autocomplete value outside the grammar of the HTML Standard"
+      },
+      {
+        "id": "autocomplete-missing",
+        "key": "autocompleteMissing",
+        "level": "warning",
+        "rule": "a field for personal data with no autocomplete field name"
+      },
+      {
+        "id": "autocomplete-off-login",
+        "key": "autocompleteOffLogin",
+        "level": "warning",
+        "rule": "autocomplete off on a password field, a username or email field next to one, or their form"
+      },
+      {
+        "id": "required-not-programmatic",
+        "key": "requiredNotProgrammatic",
+        "level": "warning",
+        "rule": "a label that says required on a field with no required or aria-required"
+      },
+      {
+        "id": "required-not-visible",
+        "key": "requiredNotVisible",
+        "level": "info",
+        "rule": "a required field whose label, description and legend do not say so"
+      },
+      {
+        "id": "broken-reference",
+        "key": "brokenReference",
+        "level": "error",
+        "rule": "aria-describedby, aria-errormessage, aria-labelledby, for, list or form naming a missing id"
+      },
+      {
+        "id": "unlinked-error",
+        "key": "unlinkedError",
+        "level": "warning",
+        "rule": "an element named like an error message, in a form, that no field references"
+      },
+      {
+        "id": "duplicate-id",
+        "key": "duplicateId",
+        "level": "error",
+        "rule": "an id held by two elements and named by a label or a reference"
+      },
+      {
+        "id": "group-without-name",
+        "key": "groupName",
+        "level": "warning",
+        "rule": "radio buttons or check boxes sharing a name, outside a named fieldset or group"
+      },
+      {
+        "id": "button-without-name",
+        "key": "buttonName",
+        "level": "error",
+        "rule": "a button with no text, alt text, aria-labelledby, aria-label, title or value"
+      },
+      {
+        "id": "form-without-submit",
+        "key": "formSubmit",
+        "level": "warning",
+        "rule": "a form with fields and no submit button"
+      },
+      {
+        "id": "positive-tabindex",
+        "key": "positiveTabindex",
+        "level": "warning",
+        "rule": "a tabindex value above 0"
+      },
+      {
+        "id": "inputmode-mismatch",
+        "key": "inputmodeMismatch",
+        "level": "warning",
+        "rule": "an inputmode or pattern that is unknown, ignored or at odds with the type"
+      },
+      {
+        "id": "many-options",
+        "key": "manyOptions",
+        "level": "info",
+        "rule": "a select with more than 30 options and no hint"
+      },
+      {
+        "id": "unreadable-file",
+        "key": null,
+        "level": "error",
+        "rule": "a file that the tool could not read"
+      },
+      {
+        "id": "scan-limit",
+        "key": null,
+        "level": "error",
+        "rule": "a folder or a file past a limit of the run"
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "examples/messy/account/login.htm",
+      "forms": 1,
+      "fields": 2,
+      "buttons": 0,
+      "byLevel": {
+        "error": 0,
+        "warning": 4,
+        "info": 0
+      }
+    },
+    {
+      "file": "examples/messy/account/signup.html",
+      "forms": 1,
+      "fields": 9,
+      "buttons": 1,
+      "byLevel": {
+        "error": 4,
+        "warning": 8,
+        "info": 2
+      }
+    },
+    {
+      "file": "examples/messy/booking/checkout.html",
+      "forms": 1,
+      "fields": 10,
+      "buttons": 1,
+      "byLevel": {
+        "error": 1,
+        "warning": 7,
+        "info": 1
+      }
+    },
+    {
+      "file": "examples/messy/index.html",
+      "forms": 2,
+      "fields": 2,
+      "buttons": 2,
+      "byLevel": {
+        "error": 2,
+        "warning": 3,
+        "info": 0
+      }
+    }
+  ],
+  "summary": {
+    "files": 4,
+    "forms": 5,
+    "fields": 23,
+    "named": 20,
+    "buttons": 4,
+    "required": 2,
+    "autocomplete": 9,
+    "selects": 1
+  },
+  "rules": [
+    {
+      "id": "missing-label",
+      "level": "error",
+      "findings": 2
+    },
+    {
+      "id": "placeholder-only-label",
+      "level": "warning",
+      "findings": 1
+    },
+    {
+      "id": "input-type-mismatch",
+      "level": "warning",
+      "findings": 4
+    },
+    {
+      "id": "autocomplete-invalid",
+      "level": "error",
+      "findings": 1
+    },
+    {
+      "id": "autocomplete-missing",
+      "level": "warning",
+      "findings": 4
+    },
+    {
+      "id": "autocomplete-off-login",
+      "level": "warning",
+      "findings": 3
+    },
+    {
+      "id": "required-not-programmatic",
+      "level": "warning",
+      "findings": 1
+    },
+    {
+      "id": "required-not-visible",
+      "level": "info",
+      "findings": 2
+    },
+    {
+      "id": "broken-reference",
+      "level": "error",
+      "findings": 2
+    },
+    {
+      "id": "unlinked-error",
+      "level": "warning",
+      "findings": 1
+    },
+    {
+      "id": "duplicate-id",
+      "level": "error",
+      "findings": 1
+    },
+    {
+      "id": "group-without-name",
+      "level": "warning",
+      "findings": 1
+    },
+    {
+      "id": "button-without-name",
+      "level": "error",
+      "findings": 1
+    },
+    {
+      "id": "form-without-submit",
+      "level": "warning",
+      "findings": 1
+    },
+    {
+      "id": "positive-tabindex",
+      "level": "warning",
+      "findings": 2
+    },
+    {
+      "id": "inputmode-mismatch",
+      "level": "warning",
+      "findings": 4
+    },
+    {
+      "id": "many-options",
+      "level": "info",
+      "findings": 1
+    },
+    {
+      "id": "unreadable-file",
+      "level": "error",
+      "findings": 0
+    },
+    {
+      "id": "scan-limit",
+      "level": "error",
+      "findings": 0
+    }
+  ],
+  "findings": [
+    {
+      "rule": "autocomplete-invalid",
+      "level": "error",
+      "file": "examples/messy/account/signup.html",
+      "line": 21,
+      "column": 52,
+      "at": "examples/messy/account/signup.html:21",
+      "found": "<input type=\"text\" name=\"phone\" id=\"phone\">: autocomplete=\"phone\": \"phone\" is not an autofill token; did you mean \"tel\"?",
+      "fix": "use on, off, or the tokens of the HTML Standard in their order, such as \"shipping postal-code\" or \"work email\"; the message suggests the token that was probably meant",
+      "basis": [
+        {
+          "text": "an autocomplete value is on, off, or in this order an optional section- token, an optional shipping or billing, an optional contact type before a contact field, one field name from a fixed list and an optional webauthn",
+          "source": "HTML Standard, Autofill (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill"
+        },
+        {
+          "text": "the purpose of a field that collects information about the user can be determined by software, in HTML with the autocomplete tokens (H98), and an incorrect value is failure F107",
+          "source": "Understanding SC 1.3.5 Identify Input Purpose (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+        }
+      ],
+      "own": "an autocomplete attribute on an input that is not hidden, a select, a textarea or a form whose value is not on, off or a list of autofill tokens in the order of the HTML Standard; on a form, only on and off are valid; an empty value is the default and is not reported"
+    },
+    {
+      "rule": "broken-reference",
+      "level": "error",
+      "file": "examples/messy/account/signup.html",
+      "line": 25,
+      "column": 74,
+      "at": "examples/messy/account/signup.html:25",
+      "found": "<input type=\"email\" name=\"email\" id=\"email\">: aria-describedby names the id \"email-hint\", which no element of the file has",
+      "fix": "point the attribute at the id of the element that holds the label, the hint or the error message, or give that element the id; an error message that is added later must get the id the field already names",
+      "basis": [
+        {
+          "text": "an error message sits at or near its field, is tied to it with aria-describedby, and aria-invalid marks the field in error",
+          "source": "User Notifications (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+        },
+        {
+          "text": "aria-errormessage names the id of the element that holds the error message of a field marked with aria-invalid, and aria-describedby is the more widely supported way to tie the two",
+          "source": "ARIA: aria-errormessage attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage"
+        },
+        {
+          "text": "a label with a for attribute labels the first element in tree order with that id, if it is labelable; a label without one labels its first labelable descendant; a hidden input is not labelable",
+          "source": "HTML Standard, The label element (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+        }
+      ],
+      "own": "an aria-describedby, aria-errormessage or aria-labelledby that names an id no element of the file has, a label whose for names no element, an input whose list names no element, and a field whose form attribute names no element; ids added by a script later are not seen"
+    },
+    {
+      "rule": "missing-label",
+      "level": "error",
+      "file": "examples/messy/account/signup.html",
+      "line": 35,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:35",
+      "found": "<input type=\"password\" name=\"password2\" id=\"password\"> has no programmatic label: no label, aria-labelledby, aria-label, title or placeholder names it",
+      "fix": "add a visible <label for=\"id\"> with the id of the field, or wrap the field and its text in a label; where no visible label fits the design, name the field with aria-labelledby pointing at visible text, or with aria-label",
+      "basis": [
+        {
+          "text": "every user interface component has a name and a role that software can determine, and a form control with no programmatically determined name is failure F68",
+          "source": "Understanding SC 4.1.2 Name, Role, Value (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+        },
+        {
+          "text": "labels or instructions are given wherever content asks for input, so people know what to enter, and identifying required fields in them helps people finish a form",
+          "source": "Understanding SC 3.3.2 Labels or Instructions (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+        },
+        {
+          "text": "a label with a for attribute labels the first element in tree order with that id, if it is labelable; a label without one labels its first labelable descendant; a hidden input is not labelable",
+          "source": "HTML Standard, The label element (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+        },
+        {
+          "text": "a label is tied to its control by for and id or by wrapping it, aria-label and aria-labelledby name it for screen readers, title is less reliable, and a button is named by its content or its value",
+          "source": "Labeling Controls (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/labels/"
+        }
+      ],
+      "own": "an input that is not hidden and not a button, a select or a textarea with no label element that labels it (by for and id, or by wrapping it) with text in it, no aria-labelledby that points at text, no aria-label, no title and no placeholder; a field with only a placeholder is left to placeholder-only-label"
+    },
+    {
+      "rule": "duplicate-id",
+      "level": "error",
+      "file": "examples/messy/account/signup.html",
+      "line": 35,
+      "column": 32,
+      "at": "examples/messy/account/signup.html:35",
+      "found": "the id \"password\" is given to 2 elements, <input type=\"password\" name=\"password\" id=\"password\"> at line 29 first; the for attribute of <label for=\"password\"> at line 28 reaches the first one only",
+      "fix": "give every element its own id, and point each label and reference at the one it means",
+      "basis": [
+        {
+          "text": "an id must be unique in the whole document, and a label that points at a repeated id is no longer reliably tied to its control",
+          "source": "HTML id global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/id"
+        },
+        {
+          "text": "a label with a for attribute labels the first element in tree order with that id, if it is labelable; a label without one labels its first labelable descendant; a hidden input is not labelable",
+          "source": "HTML Standard, The label element (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+        }
+      ],
+      "own": "an id that two or more elements of the file have, named by a label for, aria-labelledby, aria-describedby, aria-errormessage, list or form; the reference reaches the first element only, reported at the second"
+    },
+    {
+      "rule": "broken-reference",
+      "level": "error",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 69,
+      "column": 96,
+      "at": "examples/messy/booking/checkout.html:69",
+      "found": "<input name=\"cardNumber\" id=\"card-number\">: aria-errormessage names the id \"card-number-error\", which no element of the file has",
+      "fix": "point the attribute at the id of the element that holds the label, the hint or the error message, or give that element the id; an error message that is added later must get the id the field already names",
+      "basis": [
+        {
+          "text": "an error message sits at or near its field, is tied to it with aria-describedby, and aria-invalid marks the field in error",
+          "source": "User Notifications (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+        },
+        {
+          "text": "aria-errormessage names the id of the element that holds the error message of a field marked with aria-invalid, and aria-describedby is the more widely supported way to tie the two",
+          "source": "ARIA: aria-errormessage attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-errormessage"
+        },
+        {
+          "text": "a label with a for attribute labels the first element in tree order with that id, if it is labelable; a label without one labels its first labelable descendant; a hidden input is not labelable",
+          "source": "HTML Standard, The label element (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+        }
+      ],
+      "own": "an aria-describedby, aria-errormessage or aria-labelledby that names an id no element of the file has, a label whose for names no element, an input whose list names no element, and a field whose form attribute names no element; ids added by a script later are not seen"
+    },
+    {
+      "rule": "missing-label",
+      "level": "error",
+      "file": "examples/messy/index.html",
+      "line": 16,
+      "column": 7,
+      "at": "examples/messy/index.html:16",
+      "found": "<input type=\"search\" name=\"q\"> has no programmatic label: no label, aria-labelledby, aria-label, title or placeholder names it",
+      "fix": "add a visible <label for=\"id\"> with the id of the field, or wrap the field and its text in a label; where no visible label fits the design, name the field with aria-labelledby pointing at visible text, or with aria-label",
+      "basis": [
+        {
+          "text": "every user interface component has a name and a role that software can determine, and a form control with no programmatically determined name is failure F68",
+          "source": "Understanding SC 4.1.2 Name, Role, Value (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+        },
+        {
+          "text": "labels or instructions are given wherever content asks for input, so people know what to enter, and identifying required fields in them helps people finish a form",
+          "source": "Understanding SC 3.3.2 Labels or Instructions (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+        },
+        {
+          "text": "a label with a for attribute labels the first element in tree order with that id, if it is labelable; a label without one labels its first labelable descendant; a hidden input is not labelable",
+          "source": "HTML Standard, The label element (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/forms.html#the-label-element"
+        },
+        {
+          "text": "a label is tied to its control by for and id or by wrapping it, aria-label and aria-labelledby name it for screen readers, title is less reliable, and a button is named by its content or its value",
+          "source": "Labeling Controls (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/labels/"
+        }
+      ],
+      "own": "an input that is not hidden and not a button, a select or a textarea with no label element that labels it (by for and id, or by wrapping it) with text in it, no aria-labelledby that points at text, no aria-label, no title and no placeholder; a field with only a placeholder is left to placeholder-only-label"
+    },
+    {
+      "rule": "button-without-name",
+      "level": "error",
+      "file": "examples/messy/index.html",
+      "line": 17,
+      "column": 7,
+      "at": "examples/messy/index.html:17",
+      "found": "<button> has no text, no image with alt text, no aria-label, no aria-labelledby that points at text and no title: a screen reader announces it as a button with no name",
+      "fix": "put the words in the button, or alt text on its image; for an icon button, add aria-label with what it does",
+      "basis": [
+        {
+          "text": "every user interface component has a name and a role that software can determine, and a form control with no programmatically determined name is failure F68",
+          "source": "Understanding SC 4.1.2 Name, Role, Value (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/name-role-value.html"
+        },
+        {
+          "text": "a label is tied to its control by for and id or by wrapping it, aria-label and aria-labelledby name it for screen readers, title is less reliable, and a button is named by its content or its value",
+          "source": "Labeling Controls (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/labels/"
+        }
+      ],
+      "own": "a button element with no text, no image with alt text in it, no aria-labelledby that points at text, no aria-label and no title; an input of type button with no value or other name; an input of type image with no alt, aria-label, aria-labelledby or title; submit and reset inputs have a default name and are not reported"
+    },
+    {
+      "rule": "form-without-submit",
+      "level": "warning",
+      "file": "examples/messy/account/login.htm",
+      "line": 10,
+      "column": 5,
+      "at": "examples/messy/account/login.htm:10",
+      "found": "<form> holds 2 fields and no submit button",
+      "fix": "add a <button type=\"submit\"> with a clear name, so the form is sent by an explicit action that works with a keyboard and with Enter",
+      "basis": [
+        {
+          "text": "changing a field does not change the context on its own; a submit button that starts the change is technique G80, and providing submit buttons in HTML is H32",
+          "source": "Understanding SC 3.2.2 On Input (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/on-input.html"
+        }
+      ],
+      "own": "a form that holds a field that is not hidden but no button of type submit (a button with no type is one), no input of type submit or image, and no such button outside it that names it with its form attribute; a form sent by a script is reported too, because the script is not read"
+    },
+    {
+      "rule": "autocomplete-off-login",
+      "level": "warning",
+      "file": "examples/messy/account/login.htm",
+      "line": 10,
+      "column": 49,
+      "at": "examples/messy/account/login.htm:10",
+      "found": "<form>: autocomplete=\"off\" on a form with a password field (line 14) that has no token of its own keeps password managers from filling it",
+      "fix": "remove autocomplete=\"off\" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste",
+      "basis": [
+        {
+          "text": "a login step lets the browser and password managers fill in the fields, and lets people paste their credentials",
+          "source": "Understanding SC 3.3.8 Accessible Authentication (Minimum) (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+        },
+        {
+          "text": "browsers ignore autocomplete off on login forms and still offer to save and fill credentials, because password managers help security; new-password is the hint where a new password is set",
+          "source": "How to turn off form autocompletion (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion"
+        },
+        {
+          "text": "with off, the browser is asked not to store the value of the control and not to offer values entered before",
+          "source": "HTML Standard, Autofill (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill"
+        }
+      ],
+      "own": "autocomplete=\"off\" on a password field, on a username or email field in a form that holds a password field, or on a form that holds a password field with no token of its own"
+    },
+    {
+      "rule": "autocomplete-off-login",
+      "level": "warning",
+      "file": "examples/messy/account/login.htm",
+      "line": 12,
+      "column": 57,
+      "at": "examples/messy/account/login.htm:12",
+      "found": "<input type=\"email\" name=\"email\" id=\"login-email\">: autocomplete=\"off\" on a login field next to a password field keeps password managers from filling it, and browsers ignore it there",
+      "fix": "remove autocomplete=\"off\" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste",
+      "basis": [
+        {
+          "text": "a login step lets the browser and password managers fill in the fields, and lets people paste their credentials",
+          "source": "Understanding SC 3.3.8 Accessible Authentication (Minimum) (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+        },
+        {
+          "text": "browsers ignore autocomplete off on login forms and still offer to save and fill credentials, because password managers help security; new-password is the hint where a new password is set",
+          "source": "How to turn off form autocompletion (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion"
+        },
+        {
+          "text": "with off, the browser is asked not to store the value of the control and not to offer values entered before",
+          "source": "HTML Standard, Autofill (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill"
+        }
+      ],
+      "own": "autocomplete=\"off\" on a password field, on a username or email field in a form that holds a password field, or on a form that holds a password field with no token of its own"
+    },
+    {
+      "rule": "autocomplete-missing",
+      "level": "warning",
+      "file": "examples/messy/account/login.htm",
+      "line": 14,
+      "column": 7,
+      "at": "examples/messy/account/login.htm:14",
+      "found": "<input type=\"password\" name=\"password\" id=\"login-password\"> asks for a password value and it has no autocomplete: use autocomplete=\"current-password\"",
+      "fix": "add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration",
+      "basis": [
+        {
+          "text": "the purpose of a field that collects information about the user can be determined by software, in HTML with the autocomplete tokens (H98), and an incorrect value is failure F107",
+          "source": "Understanding SC 1.3.5 Identify Input Purpose (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+        },
+        {
+          "text": "autocomplete takes space-separated tokens on input, select, textarea and form, browsers may ignore off on login fields, and fitting tokens meet WCAG 1.3.5",
+          "source": "HTML attribute: autocomplete (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+        }
+      ],
+      "own": "a field whose type (email, tel, password), name or id points to a purpose of the autofill list, such as a name, an address, an email address, a phone number or card details, that has no autocomplete field name: no autocomplete attribute, or on, or off on a field that is not a login field; WCAG 1.3.5 covers fields about the user, and the tool cannot tell whose data a field asks for"
+    },
+    {
+      "rule": "autocomplete-missing",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 13,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:13",
+      "found": "<input type=\"text\" name=\"firstName\" id=\"first-name\"> asks for \"firstName\" and it has no autocomplete: use autocomplete=\"given-name\"",
+      "fix": "add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration",
+      "basis": [
+        {
+          "text": "the purpose of a field that collects information about the user can be determined by software, in HTML with the autocomplete tokens (H98), and an incorrect value is failure F107",
+          "source": "Understanding SC 1.3.5 Identify Input Purpose (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+        },
+        {
+          "text": "autocomplete takes space-separated tokens on input, select, textarea and form, browsers may ignore off on login fields, and fitting tokens meet WCAG 1.3.5",
+          "source": "HTML attribute: autocomplete (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+        }
+      ],
+      "own": "a field whose type (email, tel, password), name or id points to a purpose of the autofill list, such as a name, an address, an email address, a phone number or card details, that has no autocomplete field name: no autocomplete attribute, or on, or off on a field that is not a login field; WCAG 1.3.5 covers fields about the user, and the tool cannot tell whose data a field asks for"
+    },
+    {
+      "rule": "required-not-programmatic",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 13,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:13",
+      "found": "<input type=\"text\" name=\"firstName\" id=\"first-name\">: its label \"First name *\" says it is required, but it has no required attribute and no aria-required=\"true\"",
+      "fix": "add the required attribute to the field (or aria-required=\"true\" where the form checks the value itself), so that assistive technology says it is required too",
+      "basis": [
+        {
+          "text": "a required field is marked with the required attribute, with aria-required for assistive technology, and with text such as (required) in its label for everyone",
+          "source": "Validating Input (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/validation/"
+        },
+        {
+          "text": "labels or instructions are given wherever content asks for input, so people know what to enter, and identifying required fields in them helps people finish a form",
+          "source": "Understanding SC 3.3.2 Labels or Instructions (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+        }
+      ],
+      "own": "a field whose label text, or the text aria-labelledby points at, holds an asterisk or the word required (and not the word optional), with no required attribute and no aria-required=\"true\""
+    },
+    {
+      "rule": "input-type-mismatch",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 21,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:21",
+      "found": "<input type=\"text\" name=\"phone\" id=\"phone\"> is a plain text field, but name=\"phone\": use type=\"tel\"",
+      "fix": "use the type the message names: type=\"email\", type=\"tel\" or type=\"url\" bring the fitting on-screen keyboard and checks, and type=\"number\" fits a counted number only (not a card number, a code or a postal code, which take inputmode=\"numeric\")",
+      "basis": [
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        }
+      ],
+      "own": "an input with type=\"text\", with no type or with a type the browser does not know, whose autocomplete field name, name or id points to an email address, a phone number, a web address or a counted number (docs/method.md lists the words); the purpose is a heuristic from the markup"
+    },
+    {
+      "rule": "positive-tabindex",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 21,
+      "column": 73,
+      "at": "examples/messy/account/signup.html:21",
+      "found": "<input type=\"text\" name=\"phone\" id=\"phone\">: tabindex=\"3\" puts it ahead of the order of the page",
+      "fix": "remove the tabindex, or use 0, and put the fields in the source in the order they should be filled",
+      "basis": [
+        {
+          "text": "focusable components receive focus in an order that keeps meaning and operability, and a tab order set with tabindex that breaks it is failure F44",
+          "source": "Understanding SC 2.4.3 Focus Order (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+        },
+        {
+          "text": "only 0 and -1 are advised as tabindex values; a value above 0 changes the focus order and makes the page hard to use with a keyboard",
+          "source": "HTML tabindex global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex"
+        }
+      ],
+      "own": "any element whose tabindex, read as the HTML Standard reads a whole number, is above 0"
+    },
+    {
+      "rule": "autocomplete-off-login",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 29,
+      "column": 62,
+      "at": "examples/messy/account/signup.html:29",
+      "found": "<input type=\"password\" name=\"password\" id=\"password\">: autocomplete=\"off\" on a password field keeps password managers from filling it, and browsers ignore it there",
+      "fix": "remove autocomplete=\"off\" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste",
+      "basis": [
+        {
+          "text": "a login step lets the browser and password managers fill in the fields, and lets people paste their credentials",
+          "source": "Understanding SC 3.3.8 Accessible Authentication (Minimum) (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html"
+        },
+        {
+          "text": "browsers ignore autocomplete off on login forms and still offer to save and fill credentials, because password managers help security; new-password is the hint where a new password is set",
+          "source": "How to turn off form autocompletion (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/Security/Practical_implementation_guides/Turning_off_form_autocompletion"
+        },
+        {
+          "text": "with off, the browser is asked not to store the value of the control and not to offer values entered before",
+          "source": "HTML Standard, Autofill (WHATWG)",
+          "url": "https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofill"
+        }
+      ],
+      "own": "autocomplete=\"off\" on a password field, on a username or email field in a form that holds a password field, or on a form that holds a password field with no token of its own"
+    },
+    {
+      "rule": "unlinked-error",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 31,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:31",
+      "found": "<span> reads like an error message (\"Choose a longer password.\"), but no aria-describedby or aria-errormessage of a field names it, and it has no id",
+      "fix": "give the message an id and name it in aria-describedby (or aria-errormessage with aria-invalid=\"true\") of its field, or announce it with role=\"alert\"",
+      "basis": [
+        {
+          "text": "when an input error is detected, the field in error is identified and the error is described to the user in text",
+          "source": "Understanding SC 3.3.1 Error Identification (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html"
+        },
+        {
+          "text": "an error message sits at or near its field, is tied to it with aria-describedby, and aria-invalid marks the field in error",
+          "source": "User Notifications (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/notifications/"
+        }
+      ],
+      "own": "an element inside a form whose class or id has the word error, that holds no field and no other such element, is not role=\"alert\" or aria-live, and whose id no aria-describedby or aria-errormessage of the file names; the class name is a heuristic"
+    },
+    {
+      "rule": "group-without-name",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 38,
+      "column": 14,
+      "at": "examples/messy/account/signup.html:38",
+      "found": "2 radio buttons named \"riding\" are not in a fieldset with a legend or a named group, so the question they answer is not announced",
+      "fix": "put the group in a <fieldset> with a <legend> that asks the question, or in an element with role=\"group\" (role=\"radiogroup\" for radio buttons) and aria-labelledby pointing at the question",
+      "basis": [
+        {
+          "text": "relationships shown on screen are marked up: labels with label elements (H44), sets of radio buttons and check boxes with fieldset and legend (H71) or a grouping role (ARIA17), and title where no label can be used (H65)",
+          "source": "Understanding SC 1.3.1 Info and Relationships (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships.html"
+        },
+        {
+          "text": "related radio buttons and check boxes go in a fieldset whose legend names the group, or in a container with role group named with aria-labelledby",
+          "source": "Grouping Controls (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/grouping/"
+        }
+      ],
+      "own": "two or more radio buttons, or two or more check boxes, with the same name in the same form, where a member is not inside a fieldset whose legend has text, nor inside an element with role group or radiogroup named by aria-label or aria-labelledby"
+    },
+    {
+      "rule": "positive-tabindex",
+      "level": "warning",
+      "file": "examples/messy/account/signup.html",
+      "line": 41,
+      "column": 29,
+      "at": "examples/messy/account/signup.html:41",
+      "found": "<button>: tabindex=\"1\" puts it ahead of the order of the page",
+      "fix": "remove the tabindex, or use 0, and put the fields in the source in the order they should be filled",
+      "basis": [
+        {
+          "text": "focusable components receive focus in an order that keeps meaning and operability, and a tab order set with tabindex that breaks it is failure F44",
+          "source": "Understanding SC 2.4.3 Focus Order (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-order.html"
+        },
+        {
+          "text": "only 0 and -1 are advised as tabindex values; a value above 0 changes the focus order and makes the page hard to use with a keyboard",
+          "source": "HTML tabindex global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/tabindex"
+        }
+      ],
+      "own": "any element whose tabindex, read as the HTML Standard reads a whole number, is above 0"
+    },
+    {
+      "rule": "input-type-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 12,
+      "column": 7,
+      "at": "examples/messy/booking/checkout.html:12",
+      "found": "<input type=\"text\" name=\"qty\" id=\"riders\"> is a plain text field, but its name asks for a counted number: use type=\"number\"",
+      "fix": "use the type the message names: type=\"email\", type=\"tel\" or type=\"url\" bring the fitting on-screen keyboard and checks, and type=\"number\" fits a counted number only (not a card number, a code or a postal code, which take inputmode=\"numeric\")",
+      "basis": [
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        }
+      ],
+      "own": "an input with type=\"text\", with no type or with a type the browser does not know, whose autocomplete field name, name or id points to an email address, a phone number, a web address or a counted number (docs/method.md lists the words); the purpose is a heuristic from the markup"
+    },
+    {
+      "rule": "autocomplete-missing",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 18,
+      "column": 9,
+      "at": "examples/messy/booking/checkout.html:18",
+      "found": "<input name=\"shipping_address\" id=\"ship-street\"> asks for \"shipping_address\" and it has no autocomplete: use autocomplete=\"shipping street-address\"",
+      "fix": "add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration",
+      "basis": [
+        {
+          "text": "the purpose of a field that collects information about the user can be determined by software, in HTML with the autocomplete tokens (H98), and an incorrect value is failure F107",
+          "source": "Understanding SC 1.3.5 Identify Input Purpose (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+        },
+        {
+          "text": "autocomplete takes space-separated tokens on input, select, textarea and form, browsers may ignore off on login fields, and fitting tokens meet WCAG 1.3.5",
+          "source": "HTML attribute: autocomplete (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+        }
+      ],
+      "own": "a field whose type (email, tel, password), name or id points to a purpose of the autofill list, such as a name, an address, an email address, a phone number or card details, that has no autocomplete field name: no autocomplete attribute, or on, or off on a field that is not a login field; WCAG 1.3.5 covers fields about the user, and the tool cannot tell whose data a field asks for"
+    },
+    {
+      "rule": "inputmode-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 20,
+      "column": 91,
+      "at": "examples/messy/booking/checkout.html:20",
+      "found": "<input name=\"shipping_postcode\" id=\"ship-zip\">: pattern=\"[0-9]{5}\" asks for digits, but the field brings a full keyboard: add inputmode=\"numeric\"",
+      "fix": "use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type=\"text\" with inputmode=\"numeric\"",
+      "basis": [
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        },
+        {
+          "text": "the pattern attribute applies to the text, search, url, tel, email and password types only",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        }
+      ],
+      "own": "an inputmode value outside the eight of the list; an inputmode that differs from the keyboard of an email, tel, url, number or search type; an inputmode or a pattern on a type it does not apply to, or on a select or a textarea for pattern; a pattern of digits only, or a card number, card code or one-time code, on a text, search or password field with no numeric, decimal or tel inputmode; the pattern is read as text and never run"
+    },
+    {
+      "rule": "input-type-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 22,
+      "column": 9,
+      "at": "examples/messy/booking/checkout.html:22",
+      "found": "<input type=\"text\" name=\"website\" id=\"ship-site\"> is a plain text field, but autocomplete=\"url\": use type=\"url\"",
+      "fix": "use the type the message names: type=\"email\", type=\"tel\" or type=\"url\" bring the fitting on-screen keyboard and checks, and type=\"number\" fits a counted number only (not a card number, a code or a postal code, which take inputmode=\"numeric\")",
+      "basis": [
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        }
+      ],
+      "own": "an input with type=\"text\", with no type or with a type the browser does not know, whose autocomplete field name, name or id points to an email address, a phone number, a web address or a counted number (docs/method.md lists the words); the purpose is a heuristic from the markup"
+    },
+    {
+      "rule": "inputmode-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 69,
+      "column": 9,
+      "at": "examples/messy/booking/checkout.html:69",
+      "found": "<input name=\"cardNumber\" id=\"card-number\"> asks for a card number, which is digits, with a full keyboard: add inputmode=\"numeric\"",
+      "fix": "use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type=\"text\" with inputmode=\"numeric\"",
+      "basis": [
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        },
+        {
+          "text": "the pattern attribute applies to the text, search, url, tel, email and password types only",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        }
+      ],
+      "own": "an inputmode value outside the eight of the list; an inputmode that differs from the keyboard of an email, tel, url, number or search type; an inputmode or a pattern on a type it does not apply to, or on a select or a textarea for pattern; a pattern of digits only, or a card number, card code or one-time code, on a text, search or password field with no numeric, decimal or tel inputmode; the pattern is read as text and never run"
+    },
+    {
+      "rule": "inputmode-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 71,
+      "column": 70,
+      "at": "examples/messy/booking/checkout.html:71",
+      "found": "<input name=\"cardExpiry\" id=\"card-exp\">: inputmode=\"digits\" is not one of none, text, decimal, numeric, tel, search, email, url",
+      "fix": "use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type=\"text\" with inputmode=\"numeric\"",
+      "basis": [
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        },
+        {
+          "text": "the pattern attribute applies to the text, search, url, tel, email and password types only",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        }
+      ],
+      "own": "an inputmode value outside the eight of the list; an inputmode that differs from the keyboard of an email, tel, url, number or search type; an inputmode or a pattern on a type it does not apply to, or on a select or a textarea for pattern; a pattern of digits only, or a card number, card code or one-time code, on a text, search or password field with no numeric, decimal or tel inputmode; the pattern is read as text and never run"
+    },
+    {
+      "rule": "inputmode-mismatch",
+      "level": "warning",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 73,
+      "column": 77,
+      "at": "examples/messy/booking/checkout.html:73",
+      "found": "<input type=\"number\" name=\"cvc\" id=\"card-cvc\">: pattern applies to the text, search, url, tel, email and password types only; the browser ignores it here",
+      "fix": "use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type=\"text\" with inputmode=\"numeric\"",
+      "basis": [
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        },
+        {
+          "text": "the pattern attribute applies to the text, search, url, tel, email and password types only",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        }
+      ],
+      "own": "an inputmode value outside the eight of the list; an inputmode that differs from the keyboard of an email, tel, url, number or search type; an inputmode or a pattern on a type it does not apply to, or on a select or a textarea for pattern; a pattern of digits only, or a card number, card code or one-time code, on a text, search or password field with no numeric, decimal or tel inputmode; the pattern is read as text and never run"
+    },
+    {
+      "rule": "placeholder-only-label",
+      "level": "warning",
+      "file": "examples/messy/index.html",
+      "line": 29,
+      "column": 9,
+      "at": "examples/messy/index.html:29",
+      "found": "<input type=\"text\" name=\"email\"> is named only by its placeholder \"Your email address\", which disappears when someone types and may not be read out",
+      "fix": "add a visible label that stays on screen while the person types; keep the placeholder, if at all, for an example of the format",
+      "basis": [
+        {
+          "text": "placeholder text is not a replacement for a label: assistive technology may not read it, and it disappears as soon as someone types",
+          "source": "Form Instructions (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/instructions/"
+        },
+        {
+          "text": "a placeholder is not a label and must never be needed to understand a form",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        }
+      ],
+      "own": "a field whose only name is its placeholder: no label with text, no aria-labelledby that points at text, no aria-label and no title; browsers do take the placeholder as a last resort for the name, so it is a warning and not missing-label"
+    },
+    {
+      "rule": "input-type-mismatch",
+      "level": "warning",
+      "file": "examples/messy/index.html",
+      "line": 29,
+      "column": 9,
+      "at": "examples/messy/index.html:29",
+      "found": "<input type=\"text\" name=\"email\"> is a plain text field, but name=\"email\": use type=\"email\"",
+      "fix": "use the type the message names: type=\"email\", type=\"tel\" or type=\"url\" bring the fitting on-screen keyboard and checks, and type=\"number\" fits a counted number only (not a card number, a code or a postal code, which take inputmode=\"numeric\")",
+      "basis": [
+        {
+          "text": "the email, tel, url and number types look like a text field but bring validation and a fitting on-screen keyboard on devices that have one",
+          "source": "<input>: The HTML Input element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/input"
+        },
+        {
+          "text": "inputmode takes none, text, decimal, numeric, tel, search, email or url; numeric is for digits such as PIN codes and card numbers, and the matching input type is used where the value must be checked",
+          "source": "HTML inputmode global attribute (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/inputmode"
+        }
+      ],
+      "own": "an input with type=\"text\", with no type or with a type the browser does not know, whose autocomplete field name, name or id points to an email address, a phone number, a web address or a counted number (docs/method.md lists the words); the purpose is a heuristic from the markup"
+    },
+    {
+      "rule": "autocomplete-missing",
+      "level": "warning",
+      "file": "examples/messy/index.html",
+      "line": 29,
+      "column": 9,
+      "at": "examples/messy/index.html:29",
+      "found": "<input type=\"text\" name=\"email\"> asks for \"email\" and it has no autocomplete: use autocomplete=\"email\"",
+      "fix": "add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration",
+      "basis": [
+        {
+          "text": "the purpose of a field that collects information about the user can be determined by software, in HTML with the autocomplete tokens (H98), and an incorrect value is failure F107",
+          "source": "Understanding SC 1.3.5 Identify Input Purpose (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html"
+        },
+        {
+          "text": "autocomplete takes space-separated tokens on input, select, textarea and form, browsers may ignore off on login fields, and fitting tokens meet WCAG 1.3.5",
+          "source": "HTML attribute: autocomplete (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/autocomplete"
+        }
+      ],
+      "own": "a field whose type (email, tel, password), name or id points to a purpose of the autofill list, such as a name, an address, an email address, a phone number or card details, that has no autocomplete field name: no autocomplete attribute, or on, or off on a field that is not a login field; WCAG 1.3.5 covers fields about the user, and the tool cannot tell whose data a field asks for"
+    },
+    {
+      "rule": "required-not-visible",
+      "level": "info",
+      "file": "examples/messy/account/signup.html",
+      "line": 17,
+      "column": 9,
+      "at": "examples/messy/account/signup.html:17",
+      "found": "<input type=\"text\" name=\"lastName\" id=\"last-name\"> is required, but its label, description and legend show no asterisk and no word required",
+      "fix": "say it in the label or the legend, as text such as (required) or an asterisk explained at the top of the form",
+      "basis": [
+        {
+          "text": "a required field is marked with the required attribute, with aria-required for assistive technology, and with text such as (required) in its label for everyone",
+          "source": "Validating Input (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/validation/"
+        },
+        {
+          "text": "among the sufficient techniques, a required control is shown as required in the text of its label or legend (H90)",
+          "source": "Understanding SC 3.3.2 Labels or Instructions (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+        }
+      ],
+      "own": "a field with the required attribute or aria-required=\"true\" whose label text, aria-labelledby text, aria-describedby text and the legend of its fieldset hold no asterisk and no word required; a note, because a line such as \"all fields are required\" elsewhere on the page is not seen"
+    },
+    {
+      "rule": "required-not-visible",
+      "level": "info",
+      "file": "examples/messy/account/signup.html",
+      "line": 40,
+      "column": 14,
+      "at": "examples/messy/account/signup.html:40",
+      "found": "<input type=\"checkbox\" name=\"terms\"> is required, but its label, description and legend show no asterisk and no word required",
+      "fix": "say it in the label or the legend, as text such as (required) or an asterisk explained at the top of the form",
+      "basis": [
+        {
+          "text": "a required field is marked with the required attribute, with aria-required for assistive technology, and with text such as (required) in its label for everyone",
+          "source": "Validating Input (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/validation/"
+        },
+        {
+          "text": "among the sufficient techniques, a required control is shown as required in the text of its label or legend (H90)",
+          "source": "Understanding SC 3.3.2 Labels or Instructions (W3C WAI, WCAG 2.2)",
+          "url": "https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html"
+        }
+      ],
+      "own": "a field with the required attribute or aria-required=\"true\" whose label text, aria-labelledby text, aria-describedby text and the legend of its fieldset hold no asterisk and no word required; a note, because a line such as \"all fields are required\" elsewhere on the page is not seen"
+    },
+    {
+      "rule": "many-options",
+      "level": "info",
+      "file": "examples/messy/booking/checkout.html",
+      "line": 27,
+      "column": 9,
+      "at": "examples/messy/booking/checkout.html:27",
+      "found": "<select name=\"station\" id=\"station\"> holds 36 options, more than 30, with no hint linked by aria-describedby",
+      "fix": "consider a text field with a datalist or a search, grouping the options with optgroup, or a hint that typing the first letters jumps to an option",
+      "basis": [
+        {
+          "text": "a datalist gives a text field suggested values while the person can still type, an alternative to scrolling a long list, with accessibility limits of its own",
+          "source": "<datalist>: The HTML Data List element (MDN)",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/datalist"
+        },
+        {
+          "text": "aria-describedby ties extra instructions, such as the expected format, to a field, and they are read after its label",
+          "source": "Form Instructions (W3C WAI Forms Tutorial)",
+          "url": "https://www.w3.org/WAI/tutorials/forms/instructions/"
+        }
+      ],
+      "own": "a select element with more options than optionLimit (40 by default) and no aria-describedby that points at text, which counts as a search hint whatever it says; a note for the UX audit, because a long list is slow to scan and a script may already make it searchable"
+    }
+  ],
+  "totals": {
+    "findings": 32,
+    "byLevel": {
+      "error": 7,
+      "warning": 22,
+      "info": 3
+    },
+    "hidden": 0,
+    "notListed": 0,
+    "files": 4
+  },
+  "result": {
+    "pass": false,
+    "failOn": "error",
+    "failing": 7,
+    "byLevel": {
+      "error": 7,
+      "warning": 22,
+      "info": 3
+    },
+    "text": "FAIL - 7 findings at or above error (7 error, 22 warning, 3 info)"
+  },
+  "notes": [
+    "1 path matching vendor/** is left out",
+    "1 folder named .git or node_modules is passed over"
+  ],
+  "notice": "This check reads the HTML files on disk as text and runs no browser, no script and no style sheet; the checks are a heuristic. A finding is a lead with a file and a line for a UX audit, and a clean result is not an accessibility audit and not a conformance claim (docs/limits.md)."
+}

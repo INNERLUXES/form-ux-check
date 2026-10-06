@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kestrel Cycle Hire</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <script>
+    // A form written by a script is not read: '<form><input name="promo"></form>'
+    const banner = '<input name="promo">';
+  </script>
+</head>
+<body>
+  <header>
+    <a href="/">Kestrel Cycle Hire</a>
+    <form class="site-search" action="/search" role="search">
+      <input type="search" name="q">
+      <button type="submit"><svg aria-hidden="true" viewBox="0 0 16 16"><path d="M1 1h14v14H1z"/></svg></button>
+    </form>
+  </header>
+  <main>
+    <h1>Bikes for the river path</h1>
+    <p>Pick a bike, ride the river path, bring it back by sunset.</p>
+    <!-- The old spring offer, left in a comment, is not read:
+    <form action="/offer"><input name="offer-code"></form>
+    -->
+    <section class="newsletter">
+      <h2>Ride notes, once a month</h2>
+      <form action="/newsletter" method="post">
+        <input type="text" name="email" placeholder="Your email address">
+        <button>Sign me up</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

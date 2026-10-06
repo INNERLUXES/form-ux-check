@@ -1,0 +1,48 @@
+form-ux-check: examples/clean
+input: 2 HTML files; 1 other file passed over; 0 folders named .git or node_modules passed over; 0 paths excluded; 0 links not followed
+config: built-in defaults: include **/*.html and **/*.htm; exclude none; option limit 40; minimum severity info; fail on error
+rules: missing-label (error); placeholder-only-label (warning); input-type-mismatch (warning); autocomplete-invalid (error); autocomplete-missing (warning); autocomplete-off-login (warning); required-not-programmatic (warning); required-not-visible (info); broken-reference (error); unlinked-error (warning); duplicate-id (error); group-without-name (warning); button-without-name (error); form-without-submit (warning); positive-tabindex (warning); inputmode-mismatch (warning); many-options (info); unreadable-file (error); scan-limit (error)
+findings: 0
+
+Files (2)
+
+  file                            forms  fields  buttons  error  warning  info
+  examples/clean/index.html       1      1       1        0      0        0
+  examples/clean/visit/card.html  1      9       1        0      0        0
+
+Summary
+
+  files: 2 HTML, with 2 forms
+  fields: 10, 10 with a label or another name, 2 required, 4 with an autocomplete field name; select lists: 0
+  buttons: 2
+
+Rules (19)
+
+  rule                       level    findings
+  missing-label              error    0
+  placeholder-only-label     warning  0
+  input-type-mismatch        warning  0
+  autocomplete-invalid       error    0
+  autocomplete-missing       warning  0
+  autocomplete-off-login     warning  0
+  required-not-programmatic  warning  0
+  required-not-visible       info     0
+  broken-reference           error    0
+  unlinked-error             warning  0
+  duplicate-id               error    0
+  group-without-name         warning  0
+  button-without-name        error    0
+  form-without-submit        warning  0
+  positive-tabindex          warning  0
+  inputmode-mismatch         warning  0
+  many-options               info     0
+  unreadable-file            error    0
+  scan-limit                 error    0
+
+Findings (0)
+
+  none
+
+This check reads the HTML files on disk as text and runs no browser, no script and no style sheet; the checks are a heuristic. A finding is a lead with a file and a line for a UX audit, and a clean result is not an accessibility audit and not a conformance claim (docs/limits.md).
+
+RESULT: PASS - no finding at or above error

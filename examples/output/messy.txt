@@ -1,0 +1,179 @@
+form-ux-check: examples/messy
+input: 4 HTML files; 2 other files passed over; 1 folder named .git or node_modules passed over; 1 path excluded; 0 links not followed
+config: examples/config.json (Kestrel Cycle Hire form review): include **/*.html and **/*.htm; exclude vendor/**; option limit 30; minimum severity info; fail on error
+rules: missing-label (error); placeholder-only-label (warning); input-type-mismatch (warning); autocomplete-invalid (error); autocomplete-missing (warning); autocomplete-off-login (warning); required-not-programmatic (warning); required-not-visible (info); broken-reference (error); unlinked-error (warning); duplicate-id (error); group-without-name (warning); button-without-name (error); form-without-submit (warning); positive-tabindex (warning); inputmode-mismatch (warning); many-options (info); unreadable-file (error); scan-limit (error)
+findings: 32 (7 error, 22 warning, 3 info)
+
+Files (4)
+
+  file                                  forms  fields  buttons  error  warning  info
+  examples/messy/account/login.htm      1      2       0        0      4        0
+  examples/messy/account/signup.html    1      9       1        4      8        2
+  examples/messy/booking/checkout.html  1      10      1        1      7        1
+  examples/messy/index.html             2      2       2        2      3        0
+
+Summary
+
+  files: 4 HTML, with 5 forms
+  fields: 23, 20 with a label or another name, 2 required, 9 with an autocomplete field name; select lists: 1
+  buttons: 4
+
+Rules (19)
+
+  rule                       level    findings
+  missing-label              error    2
+  placeholder-only-label     warning  1
+  input-type-mismatch        warning  4
+  autocomplete-invalid       error    1
+  autocomplete-missing       warning  4
+  autocomplete-off-login     warning  3
+  required-not-programmatic  warning  1
+  required-not-visible       info     2
+  broken-reference           error    2
+  unlinked-error             warning  1
+  duplicate-id               error    1
+  group-without-name         warning  1
+  button-without-name        error    1
+  form-without-submit        warning  1
+  positive-tabindex          warning  2
+  inputmode-mismatch         warning  4
+  many-options               info     1
+  unreadable-file            error    0
+  scan-limit                 error    0
+
+Findings (32)
+
+  ERROR    autocomplete-invalid       examples/messy/account/signup.html:21
+           <input type="text" name="phone" id="phone">: autocomplete="phone": "phone" is not an autofill token; did you mean "tel"?
+           fix: use on, off, or the tokens of the HTML Standard in their order, such as "shipping postal-code" or "work email"; the message suggests the token that was probably meant
+
+  ERROR    broken-reference           examples/messy/account/signup.html:25
+           <input type="email" name="email" id="email">: aria-describedby names the id "email-hint", which no element of the file has
+           fix: point the attribute at the id of the element that holds the label, the hint or the error message, or give that element the id; an error message that is added later must get the id the field already names
+
+  ERROR    missing-label              examples/messy/account/signup.html:35
+           <input type="password" name="password2" id="password"> has no programmatic label: no label, aria-labelledby, aria-label, title or placeholder names it
+           fix: add a visible <label for="id"> with the id of the field, or wrap the field and its text in a label; where no visible label fits the design, name the field with aria-labelledby pointing at visible text, or with aria-label
+
+  ERROR    duplicate-id               examples/messy/account/signup.html:35
+           the id "password" is given to 2 elements, <input type="password" name="password" id="password"> at line 29 first; the for attribute of <label for="password"> at line 28 reaches the first one only
+           fix: give every element its own id, and point each label and reference at the one it means
+
+  ERROR    broken-reference           examples/messy/booking/checkout.html:69
+           <input name="cardNumber" id="card-number">: aria-errormessage names the id "card-number-error", which no element of the file has
+           fix: point the attribute at the id of the element that holds the label, the hint or the error message, or give that element the id; an error message that is added later must get the id the field already names
+
+  ERROR    missing-label              examples/messy/index.html:16
+           <input type="search" name="q"> has no programmatic label: no label, aria-labelledby, aria-label, title or placeholder names it
+           fix: add a visible <label for="id"> with the id of the field, or wrap the field and its text in a label; where no visible label fits the design, name the field with aria-labelledby pointing at visible text, or with aria-label
+
+  ERROR    button-without-name        examples/messy/index.html:17
+           <button> has no text, no image with alt text, no aria-label, no aria-labelledby that points at text and no title: a screen reader announces it as a button with no name
+           fix: put the words in the button, or alt text on its image; for an icon button, add aria-label with what it does
+
+  WARNING  form-without-submit        examples/messy/account/login.htm:10
+           <form> holds 2 fields and no submit button
+           fix: add a <button type="submit"> with a clear name, so the form is sent by an explicit action that works with a keyboard and with Enter
+
+  WARNING  autocomplete-off-login     examples/messy/account/login.htm:10
+           <form>: autocomplete="off" on a form with a password field (line 14) that has no token of its own keeps password managers from filling it
+           fix: remove autocomplete="off" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste
+
+  WARNING  autocomplete-off-login     examples/messy/account/login.htm:12
+           <input type="email" name="email" id="login-email">: autocomplete="off" on a login field next to a password field keeps password managers from filling it, and browsers ignore it there
+           fix: remove autocomplete="off" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste
+
+  WARNING  autocomplete-missing       examples/messy/account/login.htm:14
+           <input type="password" name="password" id="login-password"> asks for a password value and it has no autocomplete: use autocomplete="current-password"
+           fix: add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration
+
+  WARNING  autocomplete-missing       examples/messy/account/signup.html:13
+           <input type="text" name="firstName" id="first-name"> asks for "firstName" and it has no autocomplete: use autocomplete="given-name"
+           fix: add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration
+
+  WARNING  required-not-programmatic  examples/messy/account/signup.html:13
+           <input type="text" name="firstName" id="first-name">: its label "First name *" says it is required, but it has no required attribute and no aria-required="true"
+           fix: add the required attribute to the field (or aria-required="true" where the form checks the value itself), so that assistive technology says it is required too
+
+  WARNING  input-type-mismatch        examples/messy/account/signup.html:21
+           <input type="text" name="phone" id="phone"> is a plain text field, but name="phone": use type="tel"
+           fix: use the type the message names: type="email", type="tel" or type="url" bring the fitting on-screen keyboard and checks, and type="number" fits a counted number only (not a card number, a code or a postal code, which take inputmode="numeric")
+
+  WARNING  positive-tabindex          examples/messy/account/signup.html:21
+           <input type="text" name="phone" id="phone">: tabindex="3" puts it ahead of the order of the page
+           fix: remove the tabindex, or use 0, and put the fields in the source in the order they should be filled
+
+  WARNING  autocomplete-off-login     examples/messy/account/signup.html:29
+           <input type="password" name="password" id="password">: autocomplete="off" on a password field keeps password managers from filling it, and browsers ignore it there
+           fix: remove autocomplete="off" and name the fields: username, current-password on a login form, new-password where a password is set, so that password managers can fill them and people can paste
+
+  WARNING  unlinked-error             examples/messy/account/signup.html:31
+           <span> reads like an error message ("Choose a longer password."), but no aria-describedby or aria-errormessage of a field names it, and it has no id
+           fix: give the message an id and name it in aria-describedby (or aria-errormessage with aria-invalid="true") of its field, or announce it with role="alert"
+
+  WARNING  group-without-name         examples/messy/account/signup.html:38
+           2 radio buttons named "riding" are not in a fieldset with a legend or a named group, so the question they answer is not announced
+           fix: put the group in a <fieldset> with a <legend> that asks the question, or in an element with role="group" (role="radiogroup" for radio buttons) and aria-labelledby pointing at the question
+
+  WARNING  positive-tabindex          examples/messy/account/signup.html:41
+           <button>: tabindex="1" puts it ahead of the order of the page
+           fix: remove the tabindex, or use 0, and put the fields in the source in the order they should be filled
+
+  WARNING  input-type-mismatch        examples/messy/booking/checkout.html:12
+           <input type="text" name="qty" id="riders"> is a plain text field, but its name asks for a counted number: use type="number"
+           fix: use the type the message names: type="email", type="tel" or type="url" bring the fitting on-screen keyboard and checks, and type="number" fits a counted number only (not a card number, a code or a postal code, which take inputmode="numeric")
+
+  WARNING  autocomplete-missing       examples/messy/booking/checkout.html:18
+           <input name="shipping_address" id="ship-street"> asks for "shipping_address" and it has no autocomplete: use autocomplete="shipping street-address"
+           fix: add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration
+
+  WARNING  inputmode-mismatch         examples/messy/booking/checkout.html:20
+           <input name="shipping_postcode" id="ship-zip">: pattern="[0-9]{5}" asks for digits, but the field brings a full keyboard: add inputmode="numeric"
+           fix: use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type="text" with inputmode="numeric"
+
+  WARNING  input-type-mismatch        examples/messy/booking/checkout.html:22
+           <input type="text" name="website" id="ship-site"> is a plain text field, but autocomplete="url": use type="url"
+           fix: use the type the message names: type="email", type="tel" or type="url" bring the fitting on-screen keyboard and checks, and type="number" fits a counted number only (not a card number, a code or a postal code, which take inputmode="numeric")
+
+  WARNING  inputmode-mismatch         examples/messy/booking/checkout.html:69
+           <input name="cardNumber" id="card-number"> asks for a card number, which is digits, with a full keyboard: add inputmode="numeric"
+           fix: use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type="text" with inputmode="numeric"
+
+  WARNING  inputmode-mismatch         examples/messy/booking/checkout.html:71
+           <input name="cardExpiry" id="card-exp">: inputmode="digits" is not one of none, text, decimal, numeric, tel, search, email, url
+           fix: use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type="text" with inputmode="numeric"
+
+  WARNING  inputmode-mismatch         examples/messy/booking/checkout.html:73
+           <input type="number" name="cvc" id="card-cvc">: pattern applies to the text, search, url, tel, email and password types only; the browser ignores it here
+           fix: use the inputmode the message names, or remove the attribute that has no effect; digits that are not a counted number take type="text" with inputmode="numeric"
+
+  WARNING  placeholder-only-label     examples/messy/index.html:29
+           <input type="text" name="email"> is named only by its placeholder "Your email address", which disappears when someone types and may not be read out
+           fix: add a visible label that stays on screen while the person types; keep the placeholder, if at all, for an example of the format
+
+  WARNING  input-type-mismatch        examples/messy/index.html:29
+           <input type="text" name="email"> is a plain text field, but name="email": use type="email"
+           fix: use the type the message names: type="email", type="tel" or type="url" bring the fitting on-screen keyboard and checks, and type="number" fits a counted number only (not a card number, a code or a postal code, which take inputmode="numeric")
+
+  WARNING  autocomplete-missing       examples/messy/index.html:29
+           <input type="text" name="email"> asks for "email" and it has no autocomplete: use autocomplete="email"
+           fix: add autocomplete with the token the message names, with shipping or billing in front where the form has both addresses; a field that does not ask for data about the person filling it in can be left out with the configuration
+
+  INFO     required-not-visible       examples/messy/account/signup.html:17
+           <input type="text" name="lastName" id="last-name"> is required, but its label, description and legend show no asterisk and no word required
+           fix: say it in the label or the legend, as text such as (required) or an asterisk explained at the top of the form
+
+  INFO     required-not-visible       examples/messy/account/signup.html:40
+           <input type="checkbox" name="terms"> is required, but its label, description and legend show no asterisk and no word required
+           fix: say it in the label or the legend, as text such as (required) or an asterisk explained at the top of the form
+
+  INFO     many-options               examples/messy/booking/checkout.html:27
+           <select name="station" id="station"> holds 36 options, more than 30, with no hint linked by aria-describedby
+           fix: consider a text field with a datalist or a search, grouping the options with optgroup, or a hint that typing the first letters jumps to an option
+
+note: 1 path matching vendor/** is left out
+note: 1 folder named .git or node_modules is passed over
+
+This check reads the HTML files on disk as text and runs no browser, no script and no style sheet; the checks are a heuristic. A finding is a lead with a file and a line for a UX audit, and a clean result is not an accessibility audit and not a conformance claim (docs/limits.md).
+
+RESULT: FAIL - 7 findings at or above error (7 error, 22 warning, 3 info)

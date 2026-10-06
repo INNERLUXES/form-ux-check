@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Book your bikes - Kestrel Cycle Hire</title>
+</head>
+<body>
+  <main>
+    <h1>Book your bikes</h1>
+    <form action="/booking/pay" method="post" novalidate>
+      <label for="riders">How many riders?</label>
+      <input id="riders" name="qty" type="text">
+      <fieldset>
+        <legend>Where do we bring the bikes?</legend>
+        <label for="ship-name">Full name</label>
+        <input id="ship-name" name="shipping_full_name" autocomplete="shipping name">
+        <label for="ship-street">Street address</label>
+        <input id="ship-street" name="shipping_address">
+        <label for="ship-zip">Postcode</label>
+        <input id="ship-zip" name="shipping_postcode" autocomplete="shipping postal-code" pattern="[0-9]{5}">
+        <label for="ship-site">Your website (optional)</label>
+        <input id="ship-site" name="website" type="text" autocomplete="url">
+      </fieldset>
+      <fieldset>
+        <legend>Pick-up point</legend>
+        <label for="station">Station</label>
+        <select id="station" name="station">
+          <option>Alder Quay</option>
+          <option>Birch Quay</option>
+          <option>Cedar Quay</option>
+          <option>Dunlin Quay</option>
+          <option>Elder Quay</option>
+          <option>Fennel Quay</option>
+          <option>Gorse Quay</option>
+          <option>Hazel Quay</option>
+          <option>Ivy Quay</option>
+          <option>Juniper Quay</option>
+          <option>Kingfisher Quay</option>
+          <option>Larch Quay</option>
+          <option>Maple Quay</option>
+          <option>Nettle Quay</option>
+          <option>Osprey Quay</option>
+          <option>Plover Quay</option>
+          <option>Quince Quay</option>
+          <option>Rowan Quay</option>
+          <option>Sedge Quay</option>
+          <option>Teasel Quay</option>
+          <option>Umber Quay</option>
+          <option>Vetch Quay</option>
+          <option>Willow Quay</option>
+          <option>Yarrow Quay</option>
+          <option>Zander Quay</option>
+          <option>Ash Quay</option>
+          <option>Bramble Quay</option>
+          <option>Clover Quay</option>
+          <option>Dock Quay</option>
+          <option>Egret Quay</option>
+          <option>Flax Quay</option>
+          <option>Gannet Quay</option>
+          <option>Heron Quay</option>
+          <option>Iris Quay</option>
+          <option>Jay Quay</option>
+          <option>Kite Quay</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>Card details</legend>
+        <label for="card-number">Card number</label>
+        <input id="card-number" name="cardNumber" autocomplete="cc-number" aria-invalid="true" aria-errormessage="card-number-error">
+        <label for="card-exp">Expiry (MM/YY)</label>
+        <input id="card-exp" name="cardExpiry" autocomplete="cc-exp" inputmode="digits">
+        <label for="card-cvc">Security code</label>
+        <input id="card-cvc" name="cvc" type="number" autocomplete="cc-csc" pattern="[0-9]{3,4}">
+      </fieldset>
+      <label for="notes">Notes for the shop</label>
+      <textarea id="notes" name="notes"></textarea>
+      <button type="submit">Pay and book</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "name": "built-in defaults",
+  "include": [
+    "**/*.html",
+    "**/*.htm"
+  ],
+  "exclude": [],
+  "rules": {
+    "missingLabel": "error",
+    "placeholderOnly": "warning",
+    "inputType": "warning",
+    "autocompleteInvalid": "error",
+    "autocompleteMissing": "warning",
+    "autocompleteOffLogin": "warning",
+    "requiredNotProgrammatic": "warning",
+    "requiredNotVisible": "info",
+    "brokenReference": "error",
+    "unlinkedError": "warning",
+    "duplicateId": "error",
+    "groupName": "warning",
+    "buttonName": "error",
+    "formSubmit": "warning",
+    "positiveTabindex": "warning",
+    "inputmodeMismatch": "warning",
+    "manyOptions": "info"
+  },
+  "optionLimit": 40,
+  "minSeverity": "info",
+  "failOn": "error"
+}

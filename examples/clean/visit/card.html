@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ask for a reader card - Fernhollow Library</title>
+</head>
+<body>
+  <main>
+    <h1>Ask for a reader card</h1>
+    <p id="form-note">Fields marked (required) must be filled in.</p>
+    <form action="/card" method="post" aria-describedby="form-note">
+      <div class="field">
+        <label for="full-name">Full name (required)</label>
+        <input type="text" id="full-name" name="fullName" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email (required)</label>
+        <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-hint email-error" aria-invalid="false">
+        <p id="email-hint">We send the card number here.</p>
+        <p id="email-error" class="field-error" hidden></p>
+      </div>
+      <div class="field">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" autocomplete="tel">
+      </div>
+      <div class="field">
+        <label for="postcode">Postcode</label>
+        <input type="text" id="postcode" name="postcode" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}">
+      </div>
+      <fieldset>
+        <legend>How would you like to collect the card?</legend>
+        <label><input type="radio" name="collect" value="desk" checked> At the front desk</label>
+        <label><input type="radio" name="collect" value="post"> By post</label>
+      </fieldset>
+      <fieldset>
+        <legend>What do you plan to borrow?</legend>
+        <label><input type="checkbox" name="borrow" value="books"> Books</label>
+        <label><input type="checkbox" name="borrow" value="maps"> Maps</label>
+        <label><input type="checkbox" name="borrow" value="music"> Music</label>
+      </fieldset>
+      <button type="submit">Send the request</button>
+    </form>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "name": "Kestrel Cycle Hire form review",
+  "exclude": ["vendor/**"],
+  "optionLimit": 30
+}
